@@ -597,41 +597,171 @@ h3 {
   border-radius: 28px;
 }
 
-.mock-label {
+.label-stage {
   display: flex;
-  width: 100%;
-  min-height: 118px;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 22px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(150, 255, 122, 0.12), transparent 64%),
+    rgba(0, 0, 0, 0.16);
+}
+
+.mock-label {
+  display: grid;
+  gap: 8px;
   padding: 18px;
   border: 7px solid #e7e4d8;
   border-radius: 18px;
-  aspect-ratio: 2.75 / 1;
+  background:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.08) 42%, rgba(0, 0, 0, 0.04)),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.018) 0 1px, transparent 1px 4px),
+    var(--paper);
+  overflow: hidden;
 }
 
-.mock-label span {
+.label-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label-top span {
   color: var(--red);
   font-size: 0.78rem;
   font-weight: 900;
+  white-space: nowrap;
+}
+
+.label-top i {
+  color: #59615c;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .mock-label strong {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.25rem, 4.1vw, 3.35rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.4rem);
   letter-spacing: -0.08em;
   line-height: 0.9;
+  white-space: nowrap;
 }
 
 .mock-label small {
   color: #4c544e;
   font-weight: 800;
+  line-height: 1.05;
 }
 
-.size-1 { aspect-ratio: 3.05 / 1; }
-.size-2 { aspect-ratio: 2.75 / 1; }
-.size-3 { aspect-ratio: 2.35 / 1; }
-.size-4 { aspect-ratio: 1.95 / 1; }
+.mock-label em {
+  color: #4c544e;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.size-1 {
+  width: 72%;
+  max-width: 205px;
+  min-height: 104px;
+  padding: 12px;
+  border-width: 6px;
+  border-radius: 15px;
+}
+
+.size-1 strong {
+  font-size: 2.25rem;
+}
+
+.size-1 small {
+  font-size: 0.76rem;
+}
+
+.size-1 .label-top i {
+  display: none;
+}
+
+.size-2 {
+  width: 84%;
+  max-width: 250px;
+  min-height: 124px;
+  border-radius: 17px;
+}
+
+.size-3 {
+  width: 94%;
+  max-width: 285px;
+  min-height: 150px;
+}
+
+.size-4 {
+  width: 100%;
+  max-width: 320px;
+  min-height: 178px;
+  border-width: 8px;
+  border-radius: 20px;
+}
+
+.frame-blue { border-color: #3d8bff; }
+.frame-green-dark { border-color: #1f8b57; }
+.mock-label.frame-red { border-color: #d63b35; }
+.mock-label.frame-black { border-color: #171c1a; }
+
+.layout-promo {
+  background:
+    linear-gradient(90deg, rgba(255, 102, 95, 0.16), transparent 52%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.018) 0 1px, transparent 1px 4px),
+    var(--paper);
+}
+
+.promo-band {
+  width: max-content;
+  max-width: 100%;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #ff665f;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.layout-display {
+  align-content: space-between;
+}
+
+.display-grid {
+  display: grid;
+  gap: 12px;
+  align-items: center;
+  grid-template-columns: 1fr 46px;
+}
+
+.display-grid strong {
+  display: block;
+  max-width: 190px;
+  font-size: 2.45rem;
+  white-space: normal;
+}
+
+.qr-mark {
+  width: 46px;
+  height: 46px;
+  border: 5px solid #111713;
+  background:
+    linear-gradient(90deg, #111713 45%, transparent 45% 55%, #111713 55%) 0 0 / 14px 14px,
+    linear-gradient(#111713 45%, transparent 45% 55%, #111713 55%) 0 0 / 14px 14px,
+    #f3f2e8;
+}
 
 .label-card ul {
   display: grid;
@@ -707,9 +837,9 @@ h3 {
   line-height: 0.85;
 }
 
-.frame-black { border-color: #141816; }
-.frame-red { border-color: #d63b35; }
-.frame-green { border-color: #2b8e58; }
+.frame-label.frame-black { border-color: #141816; }
+.frame-label.frame-red { border-color: #d63b35; }
+.frame-label.frame-green { border-color: #2b8e58; }
 
 .business-section,
 .pricing-section {
@@ -1121,6 +1251,15 @@ h3 {
   .label-card {
     min-height: auto;
   }
+
+  .label-stage {
+    height: 250px;
+  }
+
+  .size-1 { max-width: 230px; }
+  .size-2 { max-width: 280px; }
+  .size-3 { max-width: 330px; }
+  .size-4 { max-width: 370px; }
 }
 
 @media (max-width: 680px) {
@@ -1198,6 +1337,34 @@ h3 {
   .steps-grid,
   .signup-form {
     grid-template-columns: 1fr;
+  }
+
+  .label-stage {
+    height: 220px;
+  }
+
+  .size-1 {
+    width: 66%;
+    min-height: 104px;
+  }
+
+  .size-2 {
+    width: 78%;
+    min-height: 124px;
+  }
+
+  .size-3 {
+    width: 90%;
+    min-height: 150px;
+  }
+
+  .size-4 {
+    width: 100%;
+    min-height: 178px;
+  }
+
+  .display-grid strong {
+    font-size: 2.1rem;
   }
 
   .portal-content {
